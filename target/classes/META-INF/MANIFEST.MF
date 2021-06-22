@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: online-vending-machine
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: CDora
+Implementation-Vendor-Id: com.javainuse
+Build-Jdk: 1.8.0_102
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/online-vending-machine
+Created-By: Maven Integration for Eclipse
+
