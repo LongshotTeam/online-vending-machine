@@ -40,4 +40,9 @@ jobs:
         with:
           push: true
           tags: urjaya/jdimage:latest
+          
+      - name: Docker Image Deploy
       - run: docker run urjaya/jdimage
+      
+      - name: Docker Image Destroy
+      - run: docker stop $(docker ps -q)
