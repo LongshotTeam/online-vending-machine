@@ -40,4 +40,4 @@ jobs:
         with:
           push: true
           tags: urjaya/jdimage:latest
-      - run: docker run jdimage:latest
+      - run: docker run urjaya/jdimage
