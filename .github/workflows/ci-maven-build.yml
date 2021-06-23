@@ -44,5 +44,5 @@ jobs:
       - name: Docker Image Deploy
       - run: docker run urjaya/jdimage
       
-      - name: Docker Image Destroy
-      - run: docker stop $(docker ps -q)
+      - name: Docker container stop
+        run: docker stop $(docker ps -q)
