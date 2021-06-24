@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: stop all docker containers
-        run: docker stop $(docker ps -a -q)
+        run: docker kill $(docker ps -q)
         
       - name: remove all docker containers
         run: docker rm $(docker ps -a -q)
