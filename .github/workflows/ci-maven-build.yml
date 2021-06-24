@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  docker:
+  docker-build-push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,7 +42,7 @@ jobs:
           tags: urjaya/jdimage:latest
           
   integration-testing:
-    needs: docker
+    needs: docker-build-push
     runs-on: ubuntu-latest
     steps:    
       - name: docker-Image-run    
