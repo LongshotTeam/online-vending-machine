@@ -75,4 +75,10 @@ jobs:
   
       - name: Destroy docker container
         run: |
-          docker stop $(docker ps -q)
+          sudo chmod 666 /var/run/docker.sock
+          ids=$(docker ps -a -q)
+          for id in $ids
+          do
+          echo "$id"
+          docker stop $id && docker rm $id
+          done
