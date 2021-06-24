@@ -46,7 +46,10 @@ jobs:
     name: docker-run integeration test and destroy the instance
     needs: docker-build-push
     runs-on: ubuntu-latest
-    steps:    
+    steps:
+      - name: stop all docker containers
+         run  docker rm $(docker ps -a -q)
+        
       - name: docker-Image-run    
         run: |
           docker run urjaya/jdimage
