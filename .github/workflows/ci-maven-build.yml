@@ -41,10 +41,17 @@ jobs:
           push: true
           tags: urjaya/jdimage:latest
           
-      - name: Docker Image Deploy
+  integration-testing:
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:    
+      - name: docker-Image-run    
         run: |
           docker run urjaya/jdimage
-      
+          
+      - name: integration-testing
+        run: echo "testing successfull"
+  
       - name: Docker container stop
         run: |
           docker stop $(docker ps -q)
