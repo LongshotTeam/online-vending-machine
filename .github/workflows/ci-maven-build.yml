@@ -43,6 +43,7 @@ jobs:
           tags: urjaya/jdimage:latest
           
   integration-testing:
+    name: docker-run integeration test and destroy the instance
     needs: docker-build-push
     runs-on: ubuntu-latest
     steps:    
@@ -50,9 +51,13 @@ jobs:
         run: |
           docker run urjaya/jdimage
           
+      - name: call health check api
+        run: |
+          echo "testing successfull"
+          
       - name: integration-testing
-        run: echo "testing successfull"
+        run: echo "test successfull"
   
-      - name: Docker container stop
+      - name: Destroy docker container
         run: |
           docker stop $(docker ps -q)
