@@ -50,6 +50,7 @@ jobs:
       - name: docker-Image-run    
         run: |
           docker run urjaya/jdimage
+          echo "Application up and running!!."
           
       - name: call health check api
         uses: satak/webrequest-action@master
