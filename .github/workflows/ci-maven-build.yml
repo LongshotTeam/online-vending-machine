@@ -50,7 +50,13 @@ jobs:
       - name: stop all docker containers
         run: |
           sudo chmod 666 /var/run/docker.sock
-          docker kill $(docker ps -q)
+          ids=$(docker ps -a -q)
+          for id in $ids
+          do
+          echo "$id"
+          docker stop $id && docker rm $id
+          done
+          #docker kill $(docker ps -q)
         
       - name: remove all docker containers
         run: docker rm $(docker ps -a -q)
