@@ -56,10 +56,16 @@ jobs:
           echo "$id"
           docker stop $id && docker rm $id
           done
-          #docker kill $(docker ps -q)
         
       - name: remove all docker containers
-        run: docker rm $(docker ps -a -q)
+        run: |
+          sudo chmod 666 /var/run/docker.sock
+          ids=$(docker ps -a -q)
+          for id in $ids
+          do
+          echo "$id"
+          docker stop $id && docker rm $id
+          done
         
       - name: docker-Image-run    
         run: |
