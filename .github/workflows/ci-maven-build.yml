@@ -52,8 +52,12 @@ jobs:
           docker run urjaya/jdimage
           
       - name: call health check api
-        run: |
-          echo "testing successfull"
+        uses: satak/webrequest-action@master
+        with:   
+          url: https://localhost:5000/
+          method: GET
+          run: |
+            echo "health check successfull"
           
       - name: integration-testing
         run: echo "test successfull"
