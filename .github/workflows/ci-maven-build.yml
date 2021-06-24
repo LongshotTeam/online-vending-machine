@@ -42,7 +42,9 @@ jobs:
           tags: urjaya/jdimage:latest
           
       - name: Docker Image Deploy
-      - run: docker run urjaya/jdimage
+        run: |
+          docker run urjaya/jdimage
       
       - name: Docker container stop
-        run: docker stop $(docker ps -q)
+        run: |
+          docker stop $(docker ps -q)
