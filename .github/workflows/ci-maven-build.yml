@@ -59,6 +59,11 @@ jobs:
         
       - name: docker-compose-image-build-run    
         run: docker run -t -d -p 5000:5000 urjaya/jdimage /bin/bash
+        
+      - name: Sleep for 30 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
           
       - name: call health check api
         uses: satak/webrequest-action@master
