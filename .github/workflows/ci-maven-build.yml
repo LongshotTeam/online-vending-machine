@@ -85,7 +85,7 @@ jobs:
       - name: Run tests with Maven
         run: |
           sudo chmod 777 *
-          mvn -B test --file pom.xml
+          mvn clean test
           echo "test successfull"
   
       - name: Destroy docker container
