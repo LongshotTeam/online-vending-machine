@@ -83,6 +83,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         run: |
+          sudo chmod 666 /var/run/docker.sock
           mvn -B test --file pom.xml
           echo "test successfull"
   
