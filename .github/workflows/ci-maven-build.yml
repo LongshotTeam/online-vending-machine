@@ -64,7 +64,9 @@ jobs:
         uses: jakejarvis/wait-action@master
         with:
           time: '30s'
-          
+      - name: verify container up and running
+        run: echo $(docker ps -a)
+      
       - name: call health check api
         uses: satak/webrequest-action@master
         with:   
