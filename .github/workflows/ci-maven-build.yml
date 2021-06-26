@@ -74,10 +74,16 @@ jobs:
           method: GET
           run: |
             echo "health check successfull"
-          
-      - name: integration-testing
+      
+      - name: Cache Maven packages - integration-testing
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Run tests with Maven
         run: |
-          mvn clean test
+          mvn -B test --file pom.xml
           echo "test successfull"
   
       - name: Destroy docker container
