@@ -58,7 +58,7 @@ jobs:
           done
         
       - name: docker-compose-image-build-run    
-        run: docker run urjaya/jdimage -it /bin/bash
+        run: docker run -t -d urjaya/jdimage /bin/bash
           
       - name: call health check api
         uses: satak/webrequest-action@master
