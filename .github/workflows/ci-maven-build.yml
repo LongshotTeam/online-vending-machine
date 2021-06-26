@@ -59,7 +59,7 @@ jobs:
         
       - name: docker-compose-image-build-run    
         run: |
-          docker-compose up
+          docker-compose -f "docker-compose.yml" up -d --build
           echo "Application up and running!!."
           
       - name: call health check api
