@@ -58,7 +58,7 @@ jobs:
           done
         
       - name: docker-compose-image-build-run    
-        run: docker-compose up -d
+        run: docker-compose -f online-vending-machine/docker-compose.yml up
           
       - name: call health check api
         uses: satak/webrequest-action@master
