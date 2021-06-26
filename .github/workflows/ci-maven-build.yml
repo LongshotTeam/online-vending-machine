@@ -76,7 +76,9 @@ jobs:
             echo "health check successfull"
           
       - name: integration-testing
-        run: echo "test successfull"
+        run: |
+          mvn clean test
+          echo "test successfull"
   
       - name: Destroy docker container
         run: |
