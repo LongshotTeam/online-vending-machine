@@ -84,7 +84,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         run: |
-          mvn clean test --file *.pom
+          mvn install -DskipTests=false
           echo "test successfull"
   
       - name: Destroy docker container
