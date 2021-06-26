@@ -6,7 +6,7 @@ This sample is based on the [Get started with Docker Compose](https://docs.docke
 
 ## GitHub Actions Workflow
 
-**push.yml**
+**ci-maven-build.yml**
 ```yml
 name: Docker Compose Actions Workflow
 on: push
