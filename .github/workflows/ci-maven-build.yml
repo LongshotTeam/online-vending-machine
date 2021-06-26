@@ -46,6 +46,11 @@ jobs:
     name: docker-run integeration test and destroy the instance
     needs: docker-build-push
     runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: online-vending-machine
+        
     steps:
       - name: stop and remove all docker containers
         run: |
