@@ -83,7 +83,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         run: |
-          chmod -R 777 *
+          sudo chmod 777 ~/Desktop/file
           mvn -B test --file pom.xml
           echo "test successfull"
   
