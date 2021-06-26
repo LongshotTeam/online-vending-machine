@@ -58,9 +58,7 @@ jobs:
           done
         
       - name: docker-compose-image-build-run    
-        run: |
-          docker-compose up -d
-          echo "Application up and running!!."
+        run: docker-compose up -d
           
       - name: call health check api
         uses: satak/webrequest-action@master
