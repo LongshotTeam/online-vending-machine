@@ -58,7 +58,7 @@ jobs:
           done
         
       - name: docker-compose-image-build-run    
-        run: docker-compose up --exit-code-from online-vending-machine
+        run: docker run -it urjaya/jdimage /bin/bash
           
       - name: call health check api
         uses: satak/webrequest-action@master
