@@ -57,9 +57,9 @@ jobs:
           docker stop $id && docker rm $id
           done
         
-      - name: docker-Image-run    
+      - name: docker-compose-image-build-run    
         run: |
-          docker run urjaya/jdimage
+          docker-compose up
           echo "Application up and running!!."
           
       - name: call health check api
