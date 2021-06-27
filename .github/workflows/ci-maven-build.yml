@@ -85,7 +85,7 @@ jobs:
       
       - name: Run tests with Maven
         run: |
-          mvn -B verify
+          mvn -B test --file pom.xml
           echo "test successfull"
   
       - name: Destroy docker container
