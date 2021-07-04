@@ -11,7 +11,7 @@ on:
 
 jobs:
   docker-build-push:
-    name: checkout build image and push docker hub
+    name: checkout build image and push docker hub1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
